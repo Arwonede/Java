@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="pierwsza" class="pl.pjatk.dawfei.Pierwsza">
+    <constructor-arg ref="druga"/>
+</bean>
+
+<bean id="druga" class="pl.pjatk.dawfei.Druga"/>
+
+<bean id="trzecia" class="pl.pjatk.dawfei.Trzecia" lazy-init="true">
+    <constructor-arg ref="applicationContext"/>
+</bean>
+    <bean id="applicationContext"/>
+
+</beans>

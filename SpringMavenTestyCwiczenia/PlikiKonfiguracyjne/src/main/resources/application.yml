@@ -1,0 +1,18 @@
+my:
+  custom:
+    property: Hello from application.yml
+    enabled: false
+    message: Hello Dawid
+    login-url: test-login
+    credentials:
+      user: test-user
+      password: pass
+
+spring:
+  main:
+    banner-mode: off
+
+logging:
+  level:
+    root: off
+
