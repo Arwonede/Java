@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: pl.pjatk.firstapispringboot.CarApiIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 2.751 s <<< FAILURE! - in pl.pjatk.firstapispringboot.CarApiIntegrationTest
+createCar_returnsCreatedCar  Time elapsed: 0.117 s  <<< FAILURE!
+org.mockito.exceptions.verification.WantedButNotInvoked: 
+
+Wanted but not invoked:
+carManager bean.addCar(
+    <any pl.pjatk.firstapispringboot.model.Car>
+);
+-> at pl.pjatk.firstapispringboot.CarApiIntegrationTest.createCar_returnsCreatedCar(CarApiIntegrationTest.java:78)
+Actually, there were zero interactions with this mock.
+
+	at pl.pjatk.firstapispringboot.CarApiIntegrationTest.createCar_returnsCreatedCar(CarApiIntegrationTest.java:78)
+
+getCars_returnsListOfCars  Time elapsed: 0.014 s  <<< ERROR!
+org.springframework.web.client.RestClientException: Error while extracting response for type [java.util.List<pl.pjatk.firstapispringboot.model.Car>] and content type [application/json]
+	at pl.pjatk.firstapispringboot.CarApiIntegrationTest.getCars_returnsListOfCars(CarApiIntegrationTest.java:38)
+Caused by: org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `java.util.ArrayList<pl.pjatk.firstapispringboot.model.Car>` from Object value (token `JsonToken.START_OBJECT`)
+	at pl.pjatk.firstapispringboot.CarApiIntegrationTest.getCars_returnsListOfCars(CarApiIntegrationTest.java:38)
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: 
+Cannot deserialize value of type `java.util.ArrayList<pl.pjatk.firstapispringboot.model.Car>` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 1]
+	at pl.pjatk.firstapispringboot.CarApiIntegrationTest.getCars_returnsListOfCars(CarApiIntegrationTest.java:38)
+
